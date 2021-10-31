@@ -11,9 +11,9 @@ import java.util.Objects;
 public class TestSystemImpl implements TestSystem {
     private Map<String, Integer> map;
     private int amountOfCorrectAnswers;
-    private DataEnricher dataEnricher;
-    private Map<String, Integer> correctAnswers;
-    private Person person;
+    private final DataEnricher dataEnricher;
+    private final Map<String, Integer> correctAnswers;
+    private final Person person;
 
     public TestSystemImpl(Person person, DataEnricher dataEnricher) {
         this.person = person;

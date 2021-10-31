@@ -23,17 +23,17 @@ public class Demo {
     }
 
     @Bean
-    public Appearance appearance(){
+    public Appearance appearance() {
         return new Appearance(dataEnricher());
     }
 
     @Bean
-    public DataEnricher dataEnricher(){
+    public DataEnricher dataEnricher() {
         return new DataEnricher(csvReader());
     }
 
     @Bean
-    public CsvReader csvReader(){
+    public CsvReader csvReader() {
         return new CsvReader();
     }
 }
