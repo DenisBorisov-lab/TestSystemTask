@@ -2,6 +2,7 @@ package com.manager.csv;
 
 import lombok.Setter;
 import lombok.SneakyThrows;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Setter
+@Component
 public class CsvReader {
     private String path = "data.csv";
 

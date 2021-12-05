@@ -2,27 +2,27 @@ package com.manager.service;
 
 import com.manager.csv.DataEnricher;
 import com.manager.domain.Person;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+@Service
 public class TestSystemImpl implements TestSystem {
     private Map<String, Integer> map;
     private int amountOfCorrectAnswers;
     private final DataEnricher dataEnricher;
     private final Map<String, Integer> correctAnswers;
-    private final Person person;
 
-    public TestSystemImpl(Person person, DataEnricher dataEnricher) {
-        this.person = person;
+    public TestSystemImpl(DataEnricher dataEnricher) {
         this.dataEnricher = dataEnricher;
         correctAnswers = dataEnricher.getQuestionsAnswersMap();
     }
 
     @Override
-    public void test() {
+    public void test(Person person) {
         map = person.getAnswer();
         List<String> questions = new ArrayList<>(map.keySet());
         for (String question : questions) {

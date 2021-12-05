@@ -1,12 +1,14 @@
 package com.manager.csv;
 
-import org.springframework.context.annotation.Configuration;
+
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class DataEnricher {
     private final Map<String, Integer> questionsAnswersMap = new HashMap<>();
     private final List<String> questions = new ArrayList<>();

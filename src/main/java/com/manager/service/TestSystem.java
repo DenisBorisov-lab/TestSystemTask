@@ -1,6 +1,8 @@
 package com.manager.service;
 
 
+import com.manager.domain.Person;
+
 public interface TestSystem {
-    void test();
+    void test(Person person);
 }
