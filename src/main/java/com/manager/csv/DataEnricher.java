@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Configuration
 public class DataEnricher {
     private final Map<String, Integer> questionsAnswersMap = new HashMap<>();
     private final List<String> questions = new ArrayList<>();
