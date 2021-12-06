@@ -2,7 +2,6 @@ package com.manager;
 
 
 import com.manager.outputService.ExaminatorService;
-import com.manager.service.InputDataService;
 import com.manager.service.TestSystem;
 import com.manager.service.TestSystemImpl;
 import org.springframework.context.ApplicationContext;

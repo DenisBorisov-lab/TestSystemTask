@@ -1,4 +1,5 @@
 package com.manager.outputService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.MessageSource;
@@ -19,6 +20,6 @@ public class AppConfiguration {
     }
 
     public String getMessage(String code) {
-        return messageSource.getMessage(code, new String[] {"Ivan"}, locale);//en_EN  new Locale("en", "EN") //todo: разобраться с аргс
+        return messageSource.getMessage(code, null, locale);//en_EN  new Locale("en", "EN") //todo: разобраться с аргс
     }
 }

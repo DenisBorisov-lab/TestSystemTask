@@ -2,6 +2,8 @@ package com.manager.service;
 
 import com.manager.csv.DataEnricher;
 import com.manager.domain.Person;
+import com.manager.outputService.AppConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,14 +13,17 @@ import java.util.Objects;
 
 @Service
 public class TestSystemImpl implements TestSystem {
-    private Map<String, Integer> map;
-    private int amountOfCorrectAnswers;
     private final DataEnricher dataEnricher;
     private final Map<String, Integer> correctAnswers;
+    private final AppConfiguration appConfiguration;
+    private Map<String, Integer> map;
+    private int amountOfCorrectAnswers;
 
-    public TestSystemImpl(DataEnricher dataEnricher) {
+    @Autowired
+    public TestSystemImpl(DataEnricher dataEnricher, AppConfiguration appConfiguration) {
         this.dataEnricher = dataEnricher;
         correctAnswers = dataEnricher.getQuestionsAnswersMap();
+        this.appConfiguration = appConfiguration;
     }
 
     @Override
@@ -31,6 +36,6 @@ public class TestSystemImpl implements TestSystem {
             }
         }
 
-        System.out.println(person.getName() + " " + person.getSurname() + ", Вы ответили на " + amountOfCorrectAnswers + " из " + map.size());
+        System.out.println(person.getName() + " " + person.getSurname() + appConfiguration.getMessage("presenter.conclusion-first") + amountOfCorrectAnswers + " " + appConfiguration.getMessage("presenter.conclusion-second") + map.size());
     }
 }

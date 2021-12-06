@@ -2,18 +2,17 @@ package com.manager.service;
 
 import com.manager.csv.DataEnricher;
 import com.manager.domain.Person;
-import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-@Service
+
 public class InputDataService {
-    private Person person;
     private final Map<String, Integer> map;
     private final List<String> questions;
+    private Person person;
 
     public InputDataService(DataEnricher dataEnricher) {
         questions = dataEnricher.getQuestions();
