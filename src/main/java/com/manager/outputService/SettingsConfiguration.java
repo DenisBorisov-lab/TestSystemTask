@@ -1,17 +1,19 @@
 package com.manager.outputService;
 
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@Getter
 @PropertySource("classpath:application.properties")
 public class SettingsConfiguration {
 
     @Value("${data.path}")
-    private static String path;
+    private String path;
 
-    public static void main(String[] args) {
-        System.out.println(path);
-    }
+    @Value("${data.offset}")
+    private int offset;
+
 }

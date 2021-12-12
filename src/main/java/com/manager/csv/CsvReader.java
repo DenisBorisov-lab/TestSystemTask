@@ -1,7 +1,9 @@
 package com.manager.csv;
 
+import com.manager.outputService.SettingsConfiguration;
 import lombok.Setter;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
@@ -15,7 +17,14 @@ import java.util.List;
 @Setter
 @Component
 public class CsvReader {
-    private final String path = "data.csv";
+    private final String path;
+    private final SettingsConfiguration settingsConfiguration;
+
+    @Autowired
+    public CsvReader(SettingsConfiguration settingsConfiguration) {
+        this.settingsConfiguration = settingsConfiguration;
+        path = settingsConfiguration.getPath();
+    }
 
     @SneakyThrows
     public List<String> read() {
