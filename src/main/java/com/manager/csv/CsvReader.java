@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @Component
 public class CsvReader {
-    private String path = "data.csv";
+    private final String path = "data.csv";
 
     @SneakyThrows
     public List<String> read() {
